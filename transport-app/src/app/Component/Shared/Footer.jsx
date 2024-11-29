@@ -26,7 +26,7 @@ const Footer = () => {
                     <div className='text-[18px] gap-2 flex flex-col py-3'>
                         <a className="link link-hover">About us</a>
                         <a className="link link-hover">Contact</a>
-                        <a className="link link-hover">Jobs</a>
+                        <a className="link link-hover">Checks</a>
                         <a className="link link-hover">Press kit</a>
                     </div>
                 </nav>
