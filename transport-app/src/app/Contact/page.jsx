@@ -44,31 +44,31 @@ const Contact = () => {
     };
 
     return (
-        <div className=" py-16 text-white flex lg:flex-row flex-col gap-10 justify-center">
-            <div className="py-10 border-2 border-green">
-                <div className="bg-green-200 p-5">
-                    <div className="border-1 py-5 px-10 bg-green-700 border-green-300 mt-10 hover:bg-green-700">
+        <div className=" py-16 text-black flex lg:flex-row flex-col gap-10 justify-center">
+            <div className="py-10 border-2 font-semibold border-green">
+                <div className="bg-green-700 p-5">
+                    <div className="border-1 py-5 px-10 bg-slate-300 border-green-300 mt-10 hover:bg-slate-300">
                         <p>Phone: 01812967146</p>
                     </div>
-                    <div className="border-1 py-5 px-10 bg-green-700 border-green-300 mt-10 hover:bg-green-700">
+                    <div className="border-1 py-5 px-10 bg-slate-300 border-green-300 mt-10 hover:bg-slate-300">
                         <p>Email: monjurulalam190629@gmail.com</p>
                     </div>
-                    <div className="border-1 py-5 px-10 bg-green-700 border-green-300 mt-10 hover:bg-green-700">
+                    <div className="border-1 py-5 px-10 bg-slate-300 border-green-300 mt-10 hover:bg-slate-300">
                         <p>Address: Pabna, Bangladesh</p>
                     </div>
                 </div>
-                <div className="bg-green-200 p-5">
-                    <div className="border-1 py-5 px-10 bg-green-700 border-slate-300 mt-10 hover:bg-green-700">
-                        <p className="bold text-2xl">Follow me</p><br />
+                <div className="bg-green-700 p-5">
+                    <div className="border-1 py-5 px-10 bg-slate-300 border-slate-300 mt-10 ">
+                        <p className="bold text-2xl">Follow us</p><br />
                         <div className="flex gap-5">
                             <a href="https://www.facebook.com/Monjurul0629/" target="_blank" rel="noopener noreferrer">
-                                <FaFacebook className="text-3xl hover:text-blue-200" />
+                                <FaFacebook className="text-3xl hover:text-blue-700" />
                             </a>
                             <a href="https://github.com/Monjurul-190629/" target="_blank" rel="noopener noreferrer">
-                                <FaSquareGithub className="text-3xl hover:text-blue-200" />
+                                <FaSquareGithub className="text-3xl hover:text-blue-700" />
                             </a>
                             <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer">
-                                <IoLogoLinkedin className="text-3xl hover:text-blue-200" />
+                                <IoLogoLinkedin className="text-3xl hover:text-blue-700" />
                             </a>
                         </div>
                     </div>
@@ -81,27 +81,27 @@ const Contact = () => {
                             type="text"
                             name="from_name"
                             placeholder="Name"
-                            className="input input-bordered w-full max-w-xs placeholder-white bg-green-700  border-1 border-white "
+                            className="input input-bordered w-full max-w-xs text-black placeholder-slate-800 bg-slate-100 border-2   border-slate-800 "
                             required
                         />
                         <input
                             type="email"
                             name="from_email"
                             placeholder="Email"
-                            className="input input-bordered w-full max-w-xs placeholder-white bg-green-700  border-1 border-white "
+                            className="input input-bordered w-full max-w-xs text-black placeholder-slate-700 bg-slate-100 border-2   border-slate-700 "
                             required
                         />
                         <input
                             type="text"
                             name="from_phone"
                             placeholder="Phone"
-                            className="input input-bordered w-full max-w-xs placeholder-white bg-green-700  border-1 border-white "
+                            className="input input-bordered w-full max-w-xs text-black placeholder-slate-700 bg-slate-100 border-2  border-slate-700 "
                         />
                         <input
                             type="text"
                             name="subject"
                             placeholder="Subject"
-                            className="input input-bordered w-full max-w-xs placeholder-white bg-green-700  border-1 border-white "
+                            className="input input-bordered w-full max-w-xs text-black placeholder-slate-700 bg-slate-100 border-2  border-slate-700 "
                         />
                     </div>
                     <div>
@@ -110,7 +110,7 @@ const Contact = () => {
                             placeholder="Enter your query here"
                             rows="6"
                             cols="30"
-                            className="border border-gray-300 p-5 placeholder-white bg-green-700  mt-10"
+                            className=" border-slate-700 p-5 text-black placeholder-slate-700 bg-slate-100 border-2  mt-10"
                             required
                         />
                     </div>
