@@ -15,7 +15,16 @@ const Navbar = () => {
                 <Link href="/">Home</Link>
             </li>
             <li>
+                <Link href="/Ticket">Tickets</Link>
+            </li>
+            <li>
+                <Link href="/Hire">Hiring</Link>
+            </li>
+            <li>
                 <Link href="/Contact">Contact us</Link>
+            </li>
+            <li>
+                <Link href="/About">About us</Link>
             </li>
         </>
     );
@@ -92,7 +101,7 @@ const Navbar = () => {
                             <div className="tooltip tooltip-left z-20  hover:tooltip-open" data-tip={session?.user?.name}>
                                 <img src="https://c8.alamy.com/comp/TC2FPE/young-man-avatar-cartoon-character-profile-picture-TC2FPE.jpg" className="lg:ml-5 w-1/4 md:w-10 hidden lg:block rounded-full" alt="User Profile" />
                             </div>
-                            <button onClick={() => signOut()} className="px-8 py-2 text-[16px] bg-green-800 hover:bg-green-900 rounded-lg text-white">Log out</button>
+                            <button onClick={() => signOut()} className="px-5 py-1 text-[16px] bg-green-800 hover:bg-green-900 rounded-lg text-white">Log out</button>
                         </> :
                             <>
                                 <Link href="/Login">
