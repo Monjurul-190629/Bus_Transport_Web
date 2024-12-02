@@ -2,8 +2,13 @@
 
 import React, { useState } from "react";
 import Link from "next/link";
+import { signOut } from "next-auth/react";
+import { useSession } from "next-auth/react";
 
 const Navbar = () => {
+    const { data: session } = useSession();
+
+    console.log(session?.user?.name)
     const navLink = (
         <>
             <li>
@@ -60,7 +65,7 @@ const Navbar = () => {
                         </ul>
                     </div>
                     <div className="flex lg:hidden justify-center items-center w-[200px]">
-                        
+
                         <p className="text-xl md:text-xl text-green-700 font-bold font-serif">TransportEase</p>
                     </div>
                     <div className="hidden lg:flex justify-center items-center w-[200px]">
@@ -82,8 +87,26 @@ const Navbar = () => {
 
                 {/* Navbar End */}
                 <div className="navbar-end">
-                    <button className="px-8 py-2 bg-green-600 rounded-lg text-white">Log in</button>
-                    <button className="px-4 py-2 ml-4 bg-green-600 rounded-lg text-white">Registration</button>
+                    {
+                        session?.user ? <>
+                            <div className="tooltip tooltip-left z-20  hover:tooltip-open" data-tip={session?.user?.name}>
+                                <img src="https://c8.alamy.com/comp/TC2FPE/young-man-avatar-cartoon-character-profile-picture-TC2FPE.jpg" className="lg:ml-5 w-1/4 md:w-10 hidden lg:block rounded-full" alt="User Profile" />
+                            </div>
+                            <button onClick={() => signOut()} className="px-8 py-2 text-[16px] bg-green-800 hover:bg-green-900 rounded-lg text-white">Log out</button>
+                        </> :
+                            <>
+                                <Link href="/Login">
+                                    <button className="px-8 py-2 text-[16px] bg-green-800 hover:bg-green-900 rounded-lg text-white">Log in</button>
+                                </Link>
+                                <Link href="/Registration">
+                                    <button className="px-4 py-2 text-[16px] ml-4 bg-green-800 hover:bg-green-900 rounded-lg text-white">Registration</button>
+                                </Link>
+                            </>
+                    }
+
+
+
+
                 </div>
             </div>
         </div>

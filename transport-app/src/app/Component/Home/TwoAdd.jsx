@@ -4,11 +4,11 @@ import { TbMathGreater } from "react-icons/tb";
 const TwoAdd = () => {
     return (
         <div>
-            <div className='flex flex-col md:flex-row justify-center gap-8 md:gap-20 items-center mt-20'>
+            <div className='flex flex-col md:flex-row justify-center gap-8 md:gap-1 items-center mt-20'>
                 <div>
                     <img src="https://i.ibb.co.com/sFsLQ1k/app-illustrator.png" alt="app-illustrator" border="0" />
                 </div>
-                <div className=' font-semibold w-[350px] md:w-[400px]'>
+                <div className=' font-semibold w-[350px] md:w-[450px]'>
                     <p className='text-4xl text-center text-gray-700'>Get More Out of our <span className='text-green-700'>TransportEase</span></p>
                     <div className='grid grid-cols-2 mt-5 gap-5'>
                         <div className='text-gray-700 text-[14px] '>
