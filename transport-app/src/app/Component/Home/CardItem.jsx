@@ -15,35 +15,35 @@ const CardItem = () => {
             <div className='flex justify-center'>
                 <div className='grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-16'>
                     <div className='bg-gray-100 text-gray-700 w-[300px]'>
-                        <div className='text-2xl text-green-700 flex justify-start px-10 mb-5'>
+                        <div className='text-3xl text-green-700 flex justify-start px-10 mb-5'>
                             <FaBus />
                         </div>
                         <p className='text-xl font-semibold text-justify mb-2'><span className='text-green-700'>Bus</span> Ticket</p>
                         <p className='text-[16px] leading-snug'>No more queuing at counters. Tickets of Hundreds+ bus operators available online.</p>
                     </div>
                     <div className='bg-gray-100 text-gray-700 w-[300px]'>
-                        <div className='text-2xl text-green-700 flex justify-start px-10 mb-5'>
+                        <div className='text-3xl text-green-700 flex justify-start px-10 mb-5'>
                             <MdDirectionsCar />
                         </div>
                         <p className='text-xl font-semibold text-justify mb-2'><span className='text-green-700'>Mini</span> Bus</p>
                         <p className='text-[16px] leading-snug'>Now book your mini-buses for domestic travel in Bangladesh.</p>
                     </div>
                     <div className='bg-gray-100 text-gray-700 w-[300px]'>
-                        <div className='text-2xl text-green-700 flex justify-start px-10 mb-5'>
+                        <div className='text-3xl text-green-700 flex justify-start px-10 mb-5'>
                             <FaTruckMoving />
                         </div>
                         <p className='text-xl font-semibold text-justify mb-2'><span className='text-green-700'>Mini</span> Truck</p>
                         <p className='text-[16px] leading-snug'>Skip the lines and dive into fun! Purchase advance booking from our online inventory.</p>
                     </div>
                     <div className='bg-gray-100 text-gray-700 w-[300px]'>
-                        <div className='text-2xl text-green-700 flex justify-start px-10 mb-5'>
+                        <div className='text-3xl text-green-700 flex justify-start px-10 mb-5'>
                             <MdPedalBike />
                         </div>
                         <p className='text-xl font-semibold text-justify mb-2'><span className='text-green-700'>Motor</span> Bike</p>
                         <p className='text-[16px] leading-snug'>Skip the lines and dive into fun! Purchase advance booking from our online inventory.</p>
                     </div>
                     <div className='bg-gray-100 text-gray-700 w-[300px]'>
-                        <div className='text-2xl text-green-700 flex justify-start px-10 mb-5'>
+                        <div className='text-3xl text-green-700 flex justify-start px-10 mb-5'>
                             <MdOutlineElectricRickshaw />
                         </div>
                         <p className='text-xl font-semibold text-justify mb-2'><span className='text-green-700'>Auto</span> Rickshaw</p>

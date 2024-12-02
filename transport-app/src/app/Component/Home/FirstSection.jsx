@@ -5,7 +5,7 @@ import React from 'react';
 
 const FirstSection = () => {
     return (
-        <div className="mb-8">
+        <div className="mt-20 mb-8">
             <div className='text-3xl font-semibold flex justify-center items-center text-gray-700 text-center mb-10'>
                 <p className=""><span className='text-green-700'>Buy Tickets</span> in 3 easy steps</p>
             </div>

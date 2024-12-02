@@ -27,7 +27,7 @@ const TwoAdd = () => {
                 </div>
             </div>
 
-            <div className='flex flex-col-reverse md:flex-row justify-center gap-10 items-center pt-10 pb-20'>
+            <div className='flex flex-col-reverse md:flex-row justify-center gap-10 items-center pt-28 pb-32'>
                 <div className='flex flex-col gap-2 text-center  lg:text-justify text-gray-700'>
                     <p className='font-semibold text-2xl md:text-3xl  lg:w-[400px] '>
                         All your <span className='text-green-700'>travel options</span> in one place

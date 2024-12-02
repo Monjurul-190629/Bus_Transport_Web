@@ -2,7 +2,6 @@
 
 import React, { useState } from "react";
 import Link from "next/link";
-import { FaUserCircle } from "react-icons/fa";
 
 const Navbar = () => {
     const navLink = (
@@ -11,7 +10,7 @@ const Navbar = () => {
                 <Link href="/">Home</Link>
             </li>
             <li>
-                <Link href="/detection">Detection</Link>
+                <Link href="/Contact">Contact us</Link>
             </li>
         </>
     );
@@ -83,7 +82,8 @@ const Navbar = () => {
 
                 {/* Navbar End */}
                 <div className="navbar-end">
-                    <FaUserCircle />
+                    <button className="px-8 py-2 bg-green-600 rounded-lg text-white">Log in</button>
+                    <button className="px-4 py-2 ml-4 bg-green-600 rounded-lg text-white">Registration</button>
                 </div>
             </div>
         </div>
