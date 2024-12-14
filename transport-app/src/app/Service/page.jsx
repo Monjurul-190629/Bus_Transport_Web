@@ -123,7 +123,7 @@ const page = () => {
                                 24/7 support
                             </p>
                             <p className=" hover:text-white">
-                                Our dedicated support team is available round the clock to assist you. Whether it's day or night, we're here to ensure your queries and concerns are resolved promptly. Your satisfaction is our priority!.
+                                Our dedicated support team is available round the clock to assist you. Whether it&apos;s day or night, we&apos;re here to ensure your queries and concerns are resolved promptly. Your satisfaction is our priority!.
                             </p>
                         </div>
                     </div>

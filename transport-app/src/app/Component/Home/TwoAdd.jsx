@@ -3,6 +3,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
+import Image from 'next/image';
 
 const TwoAdd = () => {
     // Configure intersection observer
@@ -22,7 +23,7 @@ const TwoAdd = () => {
             >
                 <div className="flex flex-col md:flex-row justify-center gap-8 md:gap-1 items-center mt-20">
                     <div>
-                        <img
+                        <Image
                             src="https://i.ibb.co.com/sFsLQ1k/app-illustrator.png"
                             alt="app-illustrator"
                             border="0"
@@ -90,7 +91,7 @@ const TwoAdd = () => {
                     </div>
                 </div>
                 <div>
-                    <img
+                    <Image
                         src="https://i.ibb.co.com/9ZYL6mX/travel-option.png"
                         alt="travel-option"
                         border="0"

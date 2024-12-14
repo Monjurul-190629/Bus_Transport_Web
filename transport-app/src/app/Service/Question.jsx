@@ -6,7 +6,7 @@ const Question = () => {
         <div className='flex justify-center items-center py-20'>
             <div className='max-w-[480px]'>
                 <p className='text-3xl font-semibold text-slate-700 pb-5'>Got Questions ? <br/>
-                    We've Got Answers</p>
+                    We&apos;ve Got Answers</p>
                 <p className='text-slate-800'>
                     We are always happy to hear from you. If you have any questions, suggestions or opinions, please do not hesitate to reach out to us.
                 </p>
@@ -31,9 +31,9 @@ const Question = () => {
                 </div>
                 <div className="collapse collapse-plus bg-base-200">
                     <input type="radio" name="my-accordion-3" />
-                    <div className="collapse-title text-xl font-medium">How can I check TransportEase's offers?</div>
+                    <div className="collapse-title text-xl font-medium">How can I check TransportEase&apos;s offers?</div>
                     <div className="collapse-content">
-                        <p>Customers can check our offers on our website. Firstly, go to our website then Click 'BUS' option, and then go to the 'Deals and offers' option. Customers also can call our helpline number 16374 for more queries and offers.</p>
+                        <p>Customers can check our offers on our website. Firstly, go to our website then Click &apos;BUS&apos; option, and then go to the &apos;Deals and offers&apos; option. Customers also can call our helpline number 16374 for more queries and offers.</p>
                     </div>
                 </div>
             </div>

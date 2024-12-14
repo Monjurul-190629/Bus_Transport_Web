@@ -7,7 +7,7 @@ const Footer = () => {
                 <nav>
                     <h6 className="text-3xl md:text-3xl border-2 border-gray-300 px-2 py-3 rounded-md ">TransportEase</h6>
                     <p className='md:w-96 text-justify text-[18px] py-3'>
-                        Transport, owned and operated by Transport Limited, is Bangladesh's largest online ticket destination,
+                        Transport, owned and operated by Transport Limited, is Bangladesh&apos;s largest online ticket destination,
                         which is committed to making your life convenient, easier and smarter.
                     </p>
                     <p className='text-[18px] mt-4 md:mt-4'>Copyright © {new Date().getFullYear()} - All right reserved</p>

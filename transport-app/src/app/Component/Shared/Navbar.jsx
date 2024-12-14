@@ -4,6 +4,7 @@ import React, { useState } from "react";
 import Link from "next/link";
 import { signOut } from "next-auth/react";
 import { useSession } from "next-auth/react";
+import Image from 'next/image';
 
 const Navbar = () => {
     const { data: session } = useSession();
@@ -78,7 +79,7 @@ const Navbar = () => {
                         <p className="text-xl md:text-xl text-green-700 font-bold font-serif">TransportEase</p>
                     </div>
                     <div className="hidden lg:flex justify-center items-center w-[200px]">
-                        <img
+                        <Image
                             src="https://clipartcraft.com/images/bus-clipart-green-4.png"
                             className="w-16"
                             alt="Logo"
@@ -99,7 +100,7 @@ const Navbar = () => {
                     {
                         session?.user ? <>
                             <div className="tooltip tooltip-left z-20  hover:tooltip-open" data-tip={session?.user?.name}>
-                                <img src="https://c8.alamy.com/comp/TC2FPE/young-man-avatar-cartoon-character-profile-picture-TC2FPE.jpg" className="lg:ml-5 w-1/4 md:w-10 hidden lg:block rounded-full" alt="User Profile" />
+                                <Image src="https://c8.alamy.com/comp/TC2FPE/young-man-avatar-cartoon-character-profile-picture-TC2FPE.jpg" className="lg:ml-5 w-1/4 md:w-10 hidden lg:block rounded-full" alt="User Profile" />
                             </div>
                             <button onClick={() => signOut()} className="px-5 py-1 text-[16px] bg-green-800 hover:bg-green-900 rounded-lg text-white">Log out</button>
                         </> :

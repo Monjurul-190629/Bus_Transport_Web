@@ -5,6 +5,7 @@ import { FaUserGroup } from "react-icons/fa6";
 import { FaBed } from "react-icons/fa6";
 import { IoIosSettings } from "react-icons/io";
 import Swal from 'sweetalert2';
+import Image from 'next/image';
 
 const Card = ({ price, seat, image, name }) => {
     const [showPayButton, setShowPayButton] = useState(false); // State to manage "Pay" button visibility
@@ -79,7 +80,7 @@ const Card = ({ price, seat, image, name }) => {
     return (
         <div>
             <div>
-                <img
+                <Image
                     src={image}
                     alt=""
                     className="h-[300px] w-[400px] rounded-lg"

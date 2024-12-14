@@ -2,7 +2,7 @@
 
 import React from "react";
 import Swal from "sweetalert2";
-
+import Image from 'next/image';
 const Banner = () => {
 
 
@@ -53,7 +53,7 @@ const Banner = () => {
     return (
         <div className="relative flex justify-center items-center w-full mb-10">
             {/* Image */}
-            <img
+            <Image
                 src="/hero-illustration (1).jpg" // Direct path from the `public` folder
                 className="w-full h-[450px] max-w-screen-xl object-cover"
                 alt="hero-illustration"
