@@ -71,7 +71,7 @@ const Page = () => {
             <div className='text-center mt-10'>
                 <p className='text-4xl font-semibold'>Our <span className='text-green-700'>MiniTruck</span></p>
                 <div className='flex justify-center pb-7'>
-                    <p className='text-slate-700 w-[390px]'>Effortlessly hire a mini truck for your transportation needs, whether it's for moving goods, running errands.</p>
+                    <p className='text-slate-700 w-[390px]'>Effortlessly hire a mini truck for your transportation needs, whether it&apos;s for moving goods, running errands.</p>
                 </div>
             </div>
             <div>

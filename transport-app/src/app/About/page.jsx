@@ -13,7 +13,7 @@ import "@smastrom/react-rating/style.css";
 // React Icons
 import { FaQuoteLeft } from "react-icons/fa";
 
-const page = () => {
+const Page = () => {
     const [swiper, setSwiper] = useState(null);
     const swiperRef = useRef(null);
 
@@ -42,7 +42,7 @@ const page = () => {
                 <div className="w-[380px] md:w-[420px] text-justify px-5 py-5">
                     Welcome to{" "}
                     <span className="text-xl text-green-800 font-semibold">TransportEase,</span> your ultimate destination for
-                    hassle-free vehicle rentals! Whether you're planning a group tour and need a bus, or you're looking for a
+                    hassle-free vehicle rentals! Whether you&apos;re planning a group tour and need a bus, or you&apos;re looking for a
                     thrilling adventure on a motorbike or minibike, we have got you covered. Our platform is designed to provide a
                     seamless booking experience, ensuring that your journey starts with ease and convenience. With a focus on
                     quality, reliability, and affordability, TransportEase is here to make your travel dreams come true!
@@ -193,4 +193,4 @@ const page = () => {
     );
 };
 
-export default page;
+export default Page;
