@@ -31,17 +31,17 @@ const Banner = () => {
                   left top
                   no-repeat
                 `,
-                
+
             });
 
         }
-        else{
+        else {
             Swal.fire({
                 icon: "error",
                 title: "Sorry...",
                 text: "Not at this moment",
                 footer: '<a href="#"></a>'
-              });
+            });
         }
     }
 
@@ -53,11 +53,15 @@ const Banner = () => {
     return (
         <div className="relative flex justify-center items-center w-full mb-10">
             {/* Image */}
-            <Image
-                src="/hero-illustration (1).jpg" // Direct path from the `public` folder
-                className="w-full h-[450px] max-w-screen-xl object-cover"
-                alt="hero-illustration"
-            />
+            <div className="relative w-full h-[450px] max-w-screen-xl">
+                <Image
+                    src="/hero-illustration (1).jpg"
+                    alt="hero-illustration"
+                    fill // Modern replacement for `layout="fill"`
+                    className="object-cover"
+                />
+            </div>
+
 
             {/* Overlay Content */}
             <form className="absolute bottom-5 left-1/2 transform -translate-x-1/2 bg-white bg-opacity-80 p-4 rounded-lg shadow-lg flex flex-col md:flex-row space-x-0 md:space-x-3 items-center " onSubmit={handleCoupon}>

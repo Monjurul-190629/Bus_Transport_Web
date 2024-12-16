@@ -24,13 +24,15 @@ const TwoAdd = () => {
                 <div className="flex flex-col md:flex-row justify-center gap-8 md:gap-1 items-center mt-20">
                     <div>
                         <Image
-                            src="https://i.ibb.co.com/sFsLQ1k/app-illustrator.png"
+                            src="/app-illustrator (1).png" // Ensure no spaces in file names
                             alt="app-illustrator"
-                            border="0"
+                            width={450}
+                            height={400}
+                            className="w-84 h-60 md:h-[450px] md:w-[450px]"
                         />
                     </div>
                     <div className="font-semibold w-[350px] md:w-[450px]">
-                        <p className="text-4xl text-center text-gray-700">
+                        <p className="text-2xl md:text-4xl text-center text-gray-700">
                             Get More Out of our{" "}
                             <span className="text-green-700">TransportEase</span>
                         </p>
@@ -72,7 +74,7 @@ const TwoAdd = () => {
                         All your <span className="text-green-700">travel options</span> in one place
                     </p>
                     <p className="lg:w-[500px] text-[18px] px-5 md:px-0">
-                        More than 1,000 trusted travel partners across buses, mini-buses, mini-truck, micros and
+                        More than 1,000 trusted travel partners across buses, mini-buses, mini-truck, micros, and
                         auto-rickshaw so that you can focus on the journey.
                     </p>
                     <div className="flex justify-center gap-7 lg:gap-20 text-center">
@@ -90,11 +92,13 @@ const TwoAdd = () => {
                         </div>
                     </div>
                 </div>
-                <div>
+                <div className="">
                     <Image
-                        src="https://i.ibb.co.com/9ZYL6mX/travel-option.png"
+                        src="/travel-option.png" // Ensure the path is correct
                         alt="travel-option"
-                        border="0"
+                        width={450}
+                        height={400}
+                        className="w-72 h-60 md:h-[450px] md:w-[450px]"
                     />
                 </div>
             </motion.div>

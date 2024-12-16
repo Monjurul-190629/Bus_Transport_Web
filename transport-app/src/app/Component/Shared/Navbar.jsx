@@ -8,8 +8,10 @@ import Image from 'next/image';
 
 const Navbar = () => {
     const { data: session } = useSession();
+    
+    console.log(session?.user?.name); // for debugging
 
-    console.log(session?.user?.name)
+    // Navbar links
     const navLink = (
         <>
             <li>
@@ -30,8 +32,9 @@ const Navbar = () => {
         </>
     );
 
+    // Handle logout action
     const handleLogout = () => {
-        logOut()
+        signOut() // Use signOut from next-auth
             .then(() => console.log("Log out successful"))
             .catch((error) => console.log(error.message));
     };
@@ -68,19 +71,22 @@ const Navbar = () => {
                         </div>
                         <ul
                             tabIndex={0}
-                            className="menu menu-sm dropdown-content z-20 mt-3 shadow border-white border-2 rounded-box w-52"
+                            className="menu menu-sm dropdown-content z-20 mt-3 bg-gray-100 shadow border-white border-2 rounded-md w-52"
                         >
-                            <div>{navLink}</div>
-
+                            {navLink}
                         </ul>
                     </div>
-                    <div className="flex lg:hidden justify-center items-center w-[200px]">
 
-                        <p className="text-xl md:text-xl text-green-700 font-bold font-serif">TransportEase</p>
+                    {/* Navbar Logo */}
+                    <div className="flex lg:hidden justify-center items-center w-[200px]">
+                        <p className="text-[15px] md:text-2xl text-green-700 font-bold font-serif">TransportEase</p>
                     </div>
+
                     <div className="hidden lg:flex justify-center items-center w-[200px]">
                         <Image
-                            src="https://clipartcraft.com/images/bus-clipart-green-4.png"
+                            src="/bus-clipart-green-4.png"
+                            width={64}
+                            height={64}
                             className="w-16"
                             alt="Logo"
                         />
@@ -98,25 +104,39 @@ const Navbar = () => {
                 {/* Navbar End */}
                 <div className="navbar-end">
                     {
-                        session?.user ? <>
-                            <div className="tooltip tooltip-left z-20  hover:tooltip-open" data-tip={session?.user?.name}>
-                                <Image src="https://c8.alamy.com/comp/TC2FPE/young-man-avatar-cartoon-character-profile-picture-TC2FPE.jpg" className="lg:ml-5 w-1/4 md:w-10 hidden lg:block rounded-full" alt="User Profile" />
-                            </div>
-                            <button onClick={() => signOut()} className="px-5 py-1 text-[16px] bg-green-800 hover:bg-green-900 rounded-lg text-white">Log out</button>
-                        </> :
+                        session?.user ? (
+                            <>
+                                <div className="tooltip tooltip-left z-20 hover:tooltip-open" data-tip={session?.user?.name}>
+                                    <Image
+                                        src="/young-man-avatar-cartoon-character-profile-picture-TC2FPE.jpg" // Ensure correct path for the avatar
+                                        width={25}
+                                        height={20}
+                                        className="lg:ml-5 w-1/4 md:w-10 hidden lg:block rounded-full"
+                                        alt="User Profile"
+                                    />
+                                </div>
+                                <button
+                                    onClick={handleLogout}
+                                    className="px-5 py-1 ml-8 w-[100px] md:ml-0 text-[16px] bg-green-800 hover:bg-green-900 rounded-lg text-white"
+                                >
+                                    Log out
+                                </button>
+                            </>
+                        ) : (
                             <>
                                 <Link href="/Login">
-                                    <button className="px-8 py-2 text-[16px] bg-green-800 hover:bg-green-900 rounded-lg text-white">Log in</button>
+                                    <button className="px-8 py-2 text-[16px] bg-green-800 hover:bg-green-900 rounded-lg text-white">
+                                        Log in
+                                    </button>
                                 </Link>
                                 <Link href="/Registration">
-                                    <button className="px-4 py-2 text-[16px] ml-4 bg-green-800 hover:bg-green-900 rounded-lg text-white">Registration</button>
+                                    <button className="px-4 py-2 text-[16px] ml-4 bg-green-800 hover:bg-green-900 rounded-lg text-white">
+                                        Registration
+                                    </button>
                                 </Link>
                             </>
+                        )
                     }
-
-
-
-
                 </div>
             </div>
         </div>

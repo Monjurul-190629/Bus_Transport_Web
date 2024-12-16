@@ -7,38 +7,24 @@ import { IoIosSettings } from "react-icons/io";
 import Swal from 'sweetalert2';
 import Image from 'next/image';
 
-const Card = ({ price, seat, image, name }) => {
+const Card = ({ image, price, name }) => {
     const [showPayButton, setShowPayButton] = useState(false); // State to manage "Pay" button visibility
     const [bookingDetails, setBookingDetails] = useState(null);
     const { data: session } = useSession();
-
+    console.log(price)
     const handleSubmit = (e, price) => {
-        e.preventDefault();
+        e.preventDefault(); // Prevent form submission reloading the page
         const form = e.target;
-        const day = form.day.value;
+        const day = parseInt(form.day.value, 10) || 0; // Ensure valid number
         const coupon = form.coupon.value;
         let Paid_amount = day * price;
 
-        if (coupon == 'A23AAB4') {
-            Paid_amount = Paid_amount - (Paid_amount * 20 / 100);
+        if (coupon === 'A23AAB4') {
+            Paid_amount -= (Paid_amount * 20) / 100; // Apply discount
         }
 
-        const name1 = session?.user?.name;
-        const email = session?.user?.email;
-        // Save booking details in state
-        const details = {
-            name1,
-            email,
-            name,
-            day,
-            Paid_amount,
-            time: new Date().toISOString(),
-        };
-        setBookingDetails(details);
-
-        document.getElementById('pay').innerHTML = "You have to pay : " + Paid_amount;
-
-        // Show the "Pay" button after confirm
+        console.log(Paid_amount); // Logs the calculated amount
+        document.getElementById('pay').innerHTML = `You have to pay: ${Paid_amount}`;
         setShowPayButton(true);
     };
 
@@ -54,11 +40,11 @@ const Card = ({ price, seat, image, name }) => {
         form.reset(); // Reset the form fields
         document.getElementById('pay').innerHTML = ''; // Clear the payment message
         setShowPayButton(false);
-    
+
         // Close the modal after payment
         const modal = document.getElementById('my_modal_1');
         modal.close(); // Close the modal
-    
+
         // Display a success alert
         Swal.fire({
             title: "Congrats, You are ready to book!",
@@ -74,7 +60,7 @@ const Card = ({ price, seat, image, name }) => {
             `
         });
     };
-    
+
 
     return (
         <div>
@@ -82,12 +68,12 @@ const Card = ({ price, seat, image, name }) => {
                 <div className="w-full sm:w-[90%] md:w-[70%] lg:w-[400px] xl:w-[400px] mb-6">
                     <Image
                         src={image}
-                        alt={name}
+                        alt=""
                         width={400}
                         height={300}
-                        className="w-full h-auto rounded-lg"
+                        className=" h-[270px] w-[400px]  rounded-lg"
                     />
-                    <div className="text-center bg-slate-200 rounded-lg py-5 px-5">
+                    <div className="text-center bg-slate-100 rounded-lg py-5 px-5">
                         <p className="text-3xl font-bold text-black">{name}</p>
                         <p className="text-slate-600 pb-5">
                             <span className="text-green-700 font-semibold text-2xl">
@@ -95,26 +81,10 @@ const Card = ({ price, seat, image, name }) => {
                             </span>
                             /per day
                         </p>
-                        <p className="flex justify-center gap-2 text-slate-600">
-                            <span className="text-xl text-green-700">
-                                <FaUserGroup />
-                            </span>
-                            {seat} seat
-                        </p>
-                        <p className="flex justify-center gap-2 text-slate-600">
-                            <span className="text-xl text-green-700">
-                                <FaBed />
-                            </span>
-                            2 driver Staff
-                        </p>
-                        <p className="flex justify-center gap-2 text-slate-600">
-                            <span className="text-xl text-green-700">
-                                <IoIosSettings />
-                            </span>
-                            Manual
-                        </p>
+
+
                         <button
-                            className="btn mt-5 bg-green-700 rounded-xl text-white hover:bg-green-900"
+                            className="btn mt-1 bg-green-700 rounded-xl text-white hover:bg-green-900"
                             onClick={() => document.getElementById('my_modal_1').showModal()}
                         >
                             Book now
@@ -123,7 +93,7 @@ const Card = ({ price, seat, image, name }) => {
                             <div className="modal-box">
                                 <div>
                                     <form onSubmit={(e) => handleSubmit(e, price)}>
-                                        <h3 className="font-bold text-lg mb-4">{name}!</h3>
+
                                         <div className="grid gap-4">
                                             <div>
                                                 <label htmlFor="day" className="block text-sm font-medium text-gray-700">Days:</label>

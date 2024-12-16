@@ -3,7 +3,7 @@ import React from 'react';
 
 const Question = () => {
     return (
-        <div className='flex justify-center items-center py-20'>
+        <div className='flex flex-col lg:flex-row mx-10 gap-10 justify-center items-center py-20'>
             <div className='max-w-[480px]'>
                 <p className='text-3xl font-semibold text-slate-700 pb-5'>Got Questions ? <br/>
                     We&apos;ve Got Answers</p>
