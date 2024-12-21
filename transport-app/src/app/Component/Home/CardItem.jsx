@@ -7,47 +7,83 @@ import { MdOutlineElectricRickshaw } from "react-icons/md";
 
 const CardItem = () => {
     return (
-        <div className='mt-32'>
-            <div>
-               <p className='text-2xl font-semibold text-gray-700 mb-3 md:mb-0 text-center '>A one-stop solution for your travel needs</p>
-               <p className='text-3xl font-semibold text-gray-700 text-center mb-12'>Introducing you to the <span className='text-green-700'>Easiest</span> way of life</p>
+        <div className="mt-16 px-4 md:px-8 lg:px-16">
+            {/* Section Heading */}
+            <div className="text-center mb-10">
+                <p className="text-xl md:text-2xl font-semibold text-gray-700 mb-2">
+                    A one-stop solution for your travel needs
+                </p>
+                <p className="text-2xl md:text-3xl font-semibold text-gray-700">
+                    Introducing you to the <span className="text-green-700">Easiest</span> way of life
+                </p>
             </div>
-            <div className='flex justify-center'>
-                <div className='grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-16'>
-                    <div className='bg-gray-100 text-gray-700 w-[300px]'>
-                        <div className='text-3xl text-green-700 flex justify-start px-10 mb-5'>
+
+            {/* Cards Section */}
+            <div className="flex justify-center">
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-12">
+                    {/* Card 1 */}
+                    <div className="bg-gray-100 text-gray-700 p-6 rounded-lg shadow-md transition-transform hover:scale-105">
+                        <div className="text-3xl text-green-700 mb-4">
                             <FaBus />
                         </div>
-                        <p className='text-xl font-semibold text-justify mb-2'><span className='text-green-700'>Bus</span> Ticket</p>
-                        <p className='text-[16px] leading-snug'>No more queuing at counters. Tickets of Hundreds+ bus operators available online.</p>
+                        <p className="text-lg font-semibold mb-2">
+                            <span className="text-green-700">Bus</span> Ticket
+                        </p>
+                        <p className="text-sm md:text-base leading-relaxed">
+                            No more queuing at counters. Tickets of Hundreds+ bus operators available online.
+                        </p>
                     </div>
-                    <div className='bg-gray-100 text-gray-700 w-[300px]'>
-                        <div className='text-3xl text-green-700 flex justify-start px-10 mb-5'>
+
+                    {/* Card 2 */}
+                    <div className="bg-gray-100 text-gray-700 p-6 rounded-lg shadow-md transition-transform hover:scale-105">
+                        <div className="text-3xl text-green-700 mb-4">
                             <MdDirectionsCar />
                         </div>
-                        <p className='text-xl font-semibold text-justify mb-2'><span className='text-green-700'>Mini</span> Bus</p>
-                        <p className='text-[16px] leading-snug'>Now book your mini-buses for domestic travel in Bangladesh.</p>
+                        <p className="text-lg font-semibold mb-2">
+                            <span className="text-green-700">Mini</span> Bus
+                        </p>
+                        <p className="text-sm md:text-base leading-relaxed">
+                            Now book your mini-buses for domestic travel in Bangladesh.
+                        </p>
                     </div>
-                    <div className='bg-gray-100 text-gray-700 w-[300px]'>
-                        <div className='text-3xl text-green-700 flex justify-start px-10 mb-5'>
+
+                    {/* Card 3 */}
+                    <div className="bg-gray-100 text-gray-700 p-6 rounded-lg shadow-md transition-transform hover:scale-105">
+                        <div className="text-3xl text-green-700 mb-4">
                             <FaTruckMoving />
                         </div>
-                        <p className='text-xl font-semibold text-justify mb-2'><span className='text-green-700'>Mini</span> Truck</p>
-                        <p className='text-[16px] leading-snug'>Skip the lines and dive into fun! Purchase advance booking from our online inventory.</p>
+                        <p className="text-lg font-semibold mb-2">
+                            <span className="text-green-700">Mini</span> Truck
+                        </p>
+                        <p className="text-sm md:text-base leading-relaxed">
+                            Skip the lines and dive into fun! Purchase advance booking from our online inventory.
+                        </p>
                     </div>
-                    <div className='bg-gray-100 text-gray-700 w-[300px]'>
-                        <div className='text-3xl text-green-700 flex justify-start px-10 mb-5'>
+
+                    {/* Card 4 */}
+                    <div className="bg-gray-100 text-gray-700 p-6 rounded-lg shadow-md transition-transform hover:scale-105">
+                        <div className="text-3xl text-green-700 mb-4">
                             <MdPedalBike />
                         </div>
-                        <p className='text-xl font-semibold text-justify mb-2'><span className='text-green-700'>Motor</span> Bike</p>
-                        <p className='text-[16px] leading-snug'>Skip the lines and dive into fun! Purchase advance booking from our online inventory.</p>
+                        <p className="text-lg font-semibold mb-2">
+                            <span className="text-green-700">Motor</span> Bike
+                        </p>
+                        <p className="text-sm md:text-base leading-relaxed">
+                            Skip the lines and dive into fun! Purchase advance booking from our online inventory.
+                        </p>
                     </div>
-                    <div className='bg-gray-100 text-gray-700 w-[300px]'>
-                        <div className='text-3xl text-green-700 flex justify-start px-10 mb-5'>
+
+                    {/* Card 5 */}
+                    <div className="bg-gray-100 text-gray-700 p-6 rounded-lg shadow-md transition-transform hover:scale-105">
+                        <div className="text-3xl text-green-700 mb-4">
                             <MdOutlineElectricRickshaw />
                         </div>
-                        <p className='text-xl font-semibold text-justify mb-2'><span className='text-green-700'>Auto</span> Rickshaw</p>
-                        <p className='text-[16px] leading-snug'>Sometimes you need enjoy you life different. So purchase booking with minimize rate from our site.</p>
+                        <p className="text-lg font-semibold mb-2">
+                            <span className="text-green-700">Auto</span> Rickshaw
+                        </p>
+                        <p className="text-sm md:text-base leading-relaxed">
+                            Sometimes you need to enjoy your life differently. So purchase booking with minimized rates from our site.
+                        </p>
                     </div>
                 </div>
             </div>

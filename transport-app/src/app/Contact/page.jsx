@@ -76,7 +76,7 @@ const Contact = () => {
             </div>
             <div className="lg:py-20 py-10 px-10 ">
                 <form ref={form} onSubmit={sendEmail}>
-                    <div className="grid lg:grid-cols-2 grid-cols-1 gap-x-10 gap-y-5">
+                    <div className="grid md:grid-cols-2 grid-cols-1 gap-x-10 gap-y-5">
                         <input
                             type="text"
                             name="from_name"
