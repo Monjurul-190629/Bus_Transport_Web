@@ -4,142 +4,86 @@ import React, { useState } from "react";
 import Link from "next/link";
 import { signOut } from "next-auth/react";
 import { useSession } from "next-auth/react";
-import Image from 'next/image';
+import Image from "next/image";
+import { Menu, X } from "lucide-react"; // For mobile menu icons
 
 const Navbar = () => {
     const { data: session } = useSession();
-    
-    console.log(session?.user?.name); // for debugging
+    const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-    // Navbar links
-    const navLink = (
-        <>
-            <li>
-                <Link href="/">Home</Link>
-            </li>
-            <li>
-                <Link href="/Service">Services</Link>
-            </li>
-            <li>
-                <Link href="/Booking">Booking</Link>
-            </li>
-            <li>
-                <Link href="/Contact">Contact us</Link>
-            </li>
-            <li>
-                <Link href="/About">About us</Link>
-            </li>
-        </>
-    );
+    const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
 
-    // Handle logout action
     const handleLogout = () => {
-        signOut() // Use signOut from next-auth
-            .then(() => console.log("Log out successful"))
+        signOut().then(() => console.log("Log out successful"))
             .catch((error) => console.log(error.message));
     };
 
-    const [isHovered, setIsHovered] = useState(false);
-    const handleMouseEnter = () => setIsHovered(true);
-    const handleMouseLeave = () => setIsHovered(false);
-
     return (
-        <div className="mx-10 py-1 text-green-800">
-            <div className="navbar">
-                {/* Navbar Start */}
-                <div className="navbar-start">
-                    <div className="dropdown">
-                        <div
-                            tabIndex={0}
-                            role="button"
-                            className="btn btn-ghost lg:hidden"
-                        >
-                            <svg
-                                xmlns="http://www.w3.org/2000/svg"
-                                className="h-5 w-5"
-                                fill="none"
-                                viewBox="0 0 24 24"
-                                stroke="currentColor"
-                            >
-                                <path
-                                    strokeLinecap="round"
-                                    strokeLinejoin="round"
-                                    strokeWidth="2"
-                                    d="M4 6h16M4 12h8m-8 6h16"
-                                />
-                            </svg>
-                        </div>
-                        <ul
-                            tabIndex={0}
-                            className="menu menu-sm dropdown-content z-20 mt-3 bg-gray-100 shadow border-white border-2 rounded-md w-52"
-                        >
-                            {navLink}
-                        </ul>
-                    </div>
+        <nav className="bg-green-900 text-white shadow-md sticky top-0 z-50">
+            <div className="container mx-auto px-5 py-3 flex justify-between items-center">
+                {/* Logo */}
+                <Link href="/" className="flex items-center space-x-2">
+                    <Image src="/bus-clipart-green-4.png" width={40} height={40} alt="Logo" className="w-10" />
+                    <span className="text-xl font-bold">TransportEase</span>
+                </Link>
 
-                    {/* Navbar Logo */}
-                    <div className="flex lg:hidden justify-center items-center w-[200px]">
-                        <p className="text-[15px] md:text-2xl text-green-700 font-bold font-serif">TransportEase</p>
-                    </div>
+                {/* Desktop Menu */}
+                <ul className="hidden md:flex space-x-6 text-lg">
+                    <li><Link href="/" className="hover:text-green-300 transition">Home</Link></li>
+                    <li><Link href="/Service" className="hover:text-green-300 transition">Services</Link></li>
+                    <li><Link href="/Booking" className="hover:text-green-300 transition">Booking</Link></li>
+                    <li><Link href="/Contact" className="hover:text-green-300 transition">Contact</Link></li>
+                    <li><Link href="/About" className="hover:text-green-300 transition">About</Link></li>
+                </ul>
 
-                    <div className="hidden lg:flex justify-center items-center w-[200px]">
-                        <Image
-                            src="/bus-clipart-green-4.png"
-                            width={64}
-                            height={64}
-                            className="w-16"
-                            alt="Logo"
-                        />
-                        <p className="text-xl ml-3 md:text-2xl font-bold font-serif text-green-700">TransportEase</p>
-                    </div>
+                {/* User Profile & Authentication */}
+                <div className="hidden md:flex items-center space-x-4">
+                    {session?.user ? (
+                        <>
+                            <Image src="/young-man-avatar-cartoon-character-profile-picture-TC2FPE.jpg" width={35} height={35} className="rounded-full border-2 border-white" alt="User Profile" />
+                            <button onClick={handleLogout} className="bg-red-500 hover:bg-red-600 px-4 py-2 rounded-lg">Log out</button>
+                        </>
+                    ) : (
+                        <>
+                            <Link href="/Login" className="bg-blue-600 hover:bg-blue-700 px-4 py-2 rounded-lg">Log in</Link>
+                            <Link href="/Registration" className="bg-green-700 hover:bg-green-800 px-4 py-2 rounded-lg hidden md:inline-block">Sign Up</Link>
+                        </>
+                    )}
                 </div>
 
-                {/* Navbar Center */}
-                <div className="navbar-center hidden lg:flex">
-                    <ul className="menu menu-horizontal px-5 py-2 items-center space-x-1">
-                        {navLink}
+                {/* Mobile Menu Button */}
+                <button onClick={toggleMenu} className="md:hidden focus:outline-none">
+                    {isMenuOpen ? <X size={30} /> : <Menu size={30} />}
+                </button>
+            </div>
+
+            {/* Mobile Menu */}
+            {isMenuOpen && (
+                <div className="md:hidden bg-green-800 text-white absolute top-16 left-0 w-full p-5 shadow-lg rounded-b-lg">
+                    <ul className="flex flex-col space-y-4 text-center">
+                        <li><Link href="/" onClick={toggleMenu} className="hover:text-green-300">Home</Link></li>
+                        <li><Link href="/Service" onClick={toggleMenu} className="hover:text-green-300">Services</Link></li>
+                        <li><Link href="/Booking" onClick={toggleMenu} className="hover:text-green-300">Booking</Link></li>
+                        <li><Link href="/Contact" onClick={toggleMenu} className="hover:text-green-300">Contact</Link></li>
+                        <li><Link href="/About" onClick={toggleMenu} className="hover:text-green-300">About</Link></li>
                     </ul>
-                </div>
 
-                {/* Navbar End */}
-                <div className="navbar-end">
-                    {
-                        session?.user ? (
+                    <div className="mt-4 flex flex-col items-center">
+                        {session?.user ? (
                             <>
-                                <div className="tooltip tooltip-left z-20 hover:tooltip-open" data-tip={session?.user?.name}>
-                                    <Image
-                                        src="/young-man-avatar-cartoon-character-profile-picture-TC2FPE.jpg" // Ensure correct path for the avatar
-                                        width={25}
-                                        height={20}
-                                        className="lg:ml-5 w-1/4 md:w-10 hidden lg:block rounded-full"
-                                        alt="User Profile"
-                                    />
-                                </div>
-                                <button
-                                    onClick={handleLogout}
-                                    className="px-5 py-1 ml-8 w-[100px] md:ml-0 text-[16px] bg-green-800 hover:bg-green-900 rounded-lg text-white"
-                                >
-                                    Log out
-                                </button>
+                                <Image src="/young-man-avatar-cartoon-character-profile-picture-TC2FPE.jpg" width={40} height={40} className="rounded-full border-2 border-white mb-2" alt="User Profile" />
+                                <button onClick={handleLogout} className="bg-red-500 hover:bg-red-600 px-6 py-2 rounded-lg">Log out</button>
                             </>
                         ) : (
                             <>
-                                <Link href="/Login">
-                                    <button className="px-8 py-2 text-[16px] bg-green-800 hover:bg-green-900 rounded-lg text-white">
-                                        Log in
-                                    </button>
-                                </Link>
-                                <Link href="/Registration">
-                                    <button className="px-4 py-2 hidden md:block text-[16px] ml-4 bg-green-800 hover:bg-green-900 rounded-lg text-white">
-                                        Registration
-                                    </button>
-                                </Link>
+                                <Link href="/Login" className="bg-blue-600 hover:bg-blue-700 px-6 py-2 rounded-lg w-full text-center">Log in</Link>
+                                <Link href="/Registration" className="bg-green-700 hover:bg-green-800 px-6 py-2 rounded-lg w-full text-center mt-2">Sign Up</Link>
                             </>
-                        )
-                    }
+                        )}
+                    </div>
                 </div>
-            </div>
-        </div>
+            )}
+        </nav>
     );
 };
 

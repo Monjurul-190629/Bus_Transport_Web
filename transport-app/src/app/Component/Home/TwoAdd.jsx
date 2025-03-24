@@ -19,89 +19,90 @@ const TwoAdd = () => {
                 initial={{ opacity: 0, scale: 0.8 }}
                 animate={inView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.8 }}
                 transition={{ duration: 1.5 }}
-                className="p-4 sm:p-8 rounded-lg shadow-lg"
+                className="p-6 sm:p-8 rounded-2xl shadow-xl bg-white max-w-screen-xl mx-auto"
             >
-                <div className="flex flex-col md:flex-row justify-center gap-8 md:gap-1 items-center mt-20">
-                    <div>
+                <div className="flex flex-col md:flex-row justify-center items-center gap-10 md:gap-16 mt-20">
+                    {/* Image */}
+                    <div className="w-72 h-48 md:w-[450px] md:h-[400px] rounded-lg overflow-hidden shadow-xl">
                         <Image
-                            src="/app-illustrator (1).png" // Ensure no spaces in file names
+                            src="/app-illustrator (1).png"
                             alt="app-illustrator"
                             width={450}
                             height={400}
-                            className="w-84 h-60 md:h-[450px] md:w-[450px]"
+                            className="w-full h-full object-cover transform hover:scale-105 transition-transform duration-300"
                         />
                     </div>
-                    <div className="font-semibold w-[350px] md:w-[450px]">
-                        <p className="text-2xl md:text-4xl text-center text-gray-700">
+
+                    {/* Text Content */}
+                    <div className="text-center md:text-left w-[300px] md:w-[400px]">
+                        <p className="text-2xl md:text-3xl text-gray-700 mb-6 font-semibold">
                             Get More Out of our{" "}
                             <span className="text-green-700">TransportEase</span>
                         </p>
-                        <div className="grid grid-cols-2 mt-5 gap-5">
-                            <div className="text-gray-700 text-[14px] ">
-                                <p className="flex justify-center gap-1 leading-snug">
-                                    <span className="text-green-700 pr-1">1.</span>Faster and easier booking
-                                </p>
+                        <div className="space-y-4 text-gray-700 text-sm md:text-base">
+                            <div className="flex items-center gap-2">
+                                <span className="text-green-700 text-lg font-semibold">1.</span>
+                                Faster and easier booking
                             </div>
-                            <div className="text-gray-700 text-[14px] ">
-                                <p className="flex justify-center gap-1 leading-snug">
-                                    <span className="text-green-700 pr-1">2</span>Get alerts before every departure
-                                </p>
+                            <div className="flex items-center gap-2">
+                                <span className="text-green-700 text-lg font-semibold">2.</span>
+                                Get alerts before every departure
                             </div>
-                            <div className="text-gray-700 text-[14px] ">
-                                <p className="flex justify-center gap-1 leading-snug">
-                                    <span className="text-green-700 pr-1">3</span>Easy access to your tickets
-                                </p>
+                            <div className="flex items-center gap-2">
+                                <span className="text-green-700 text-lg font-semibold">3.</span>
+                                Easy access to your tickets
                             </div>
-                            <div className="text-gray-700 text-[14px] ">
-                                <p className="flex justify-center gap-1 leading-snug">
-                                    <span className="text-green-700 pr-1">4</span>Onboard with digital tickets
-                                </p>
+                            <div className="flex items-center gap-2">
+                                <span className="text-green-700 text-lg font-semibold">4.</span>
+                                Onboard with digital tickets
                             </div>
                         </div>
                     </div>
                 </div>
             </motion.div>
 
-            {/* Section 2 */}
             <motion.div
                 initial={{ opacity: 0, y: 50 }}
                 animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
                 transition={{ duration: 1 }}
-                className="flex flex-col-reverse md:flex-row justify-center gap-10 items-center pt-28 pb-32"
+                className="flex flex-col-reverse md:flex-row justify-center gap-8 md:gap-16 items-center py-12 md:py-20"
             >
-                <div className="flex flex-col gap-2 text-center lg:text-justify text-gray-700">
-                    <p className="font-semibold text-2xl md:text-3xl lg:w-[400px]">
+                {/* Text Section */}
+                <div className="text-center md:text-left text-gray-700 space-y-6 px-5 md:px-0">
+                    <p className="font-semibold text-2xl md:text-3xl mb-4">
                         All your <span className="text-green-700">travel options</span> in one place
                     </p>
-                    <p className="lg:w-[500px] text-[18px] px-5 md:px-0">
-                        More than 1,000 trusted travel partners across buses, mini-buses, mini-truck, micros, and
-                        auto-rickshaw so that you can focus on the journey.
+                    <p className="lg:w-[500px] text-lg md:text-xl mx-auto md:mx-0">
+                        More than 1,000 trusted travel partners across buses, mini-buses, mini-trucks, micros, and auto-rickshaws so you can focus on your journey.
                     </p>
-                    <div className="flex justify-center gap-7 lg:gap-20 text-center">
-                        <div>
-                            <p className="text-2xl text-green-700 font-bold">1 Million+ </p>
-                            <p className="text-[14px]">Tickets sold</p>
+                    <div className="flex flex-wrap justify-center md:justify-start gap-8 md:gap-12 text-center md:text-left">
+                        <div className="text-center md:text-left">
+                            <p className="text-2xl md:text-3xl text-green-700 font-bold">1 Million+ </p>
+                            <p className="text-[14px] md:text-sm text-gray-600">Tickets sold</p>
                         </div>
-                        <div>
-                            <p className="text-2xl text-green-700 font-bold">3 Thousand+ </p>
-                            <p className="text-[14px]">Routes</p>
+                        <div className="text-center md:text-left">
+                            <p className="text-2xl md:text-3xl text-green-700 font-bold">3 Thousand+ </p>
+                            <p className="text-[14px] md:text-sm text-gray-600">Routes</p>
                         </div>
-                        <div>
-                            <p className="text-2xl text-green-700 font-bold">2 Lakhs+ </p>
-                            <p className="text-[14px]">Happy Users</p>
+                        <div className="text-center md:text-left">
+                            <p className="text-2xl md:text-3xl text-green-700 font-bold">2 Lakhs+ </p>
+                            <p className="text-[14px] md:text-sm text-gray-600">Happy Users</p>
                         </div>
                     </div>
                 </div>
-                <div className="">
+
+                {/* Image Section */}
+                <div className="w-72 h-48 md:w-[450px] md:h-[400px] rounded-lg overflow-hidden shadow-xl">
                     <Image
-                        src="/travel-option.png" // Ensure the path is correct
+                        src="/travel-option.png"
                         alt="travel-option"
                         width={450}
                         height={400}
-                        className="w-72 h-60 md:h-[450px] md:w-[450px]"
+                        className="w-full h-full object-cover transform hover:scale-105 transition-transform duration-300"
                     />
                 </div>
             </motion.div>
+
         </div>
     );
 };
